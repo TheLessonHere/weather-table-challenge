@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/weather-table-challenge/static/css/main.e6c13ad2.css",
+    "main.js": "/weather-table-challenge/static/js/main.9057e0ec.js",
+    "static/js/787.7f2f47cb.chunk.js": "/weather-table-challenge/static/js/787.7f2f47cb.chunk.js",
+    "static/media/logo.svg": "/weather-table-challenge/static/media/logo.baa6ef9bc447f95197aa93a36125c251.svg",
+    "index.html": "/weather-table-challenge/index.html",
+    "main.e6c13ad2.css.map": "/weather-table-challenge/static/css/main.e6c13ad2.css.map",
+    "main.9057e0ec.js.map": "/weather-table-challenge/static/js/main.9057e0ec.js.map",
+    "787.7f2f47cb.chunk.js.map": "/weather-table-challenge/static/js/787.7f2f47cb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.9057e0ec.js"
+  ]
+}
