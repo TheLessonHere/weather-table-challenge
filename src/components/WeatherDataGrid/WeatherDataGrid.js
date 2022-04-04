@@ -2,21 +2,37 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { WEATHER } from "api";
 import { cityList } from "utils";
 import { DataGrid } from '@mui/x-data-grid';
+import CircularProgress from '@mui/material/CircularProgress';
 import styled from "styled-components";
 
 const GridContainer = styled.div`
     height: 400px;
     width: 100%;
     max-width: 900px;
-    backgroundColor: transparent;
+    background: transparent;
+`;
+
+const LoadingContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+    max-width: 900px;
+    background: #ffca7a;
+    margin: 0 32px;
+    border-radius: 2px;
 `;
 
 const WeatherDataGrid = ({ lightTheme }) => {
     // Create state to store weather data
     const [weatherData, setWeatherData] = useState([]);
+    // Create loading state
+    const [loading, setLoading] = useState(false);
 
     // useCallback to gather weather data of the 20 most populated US cities (updates if the list changes)
     const getData = useCallback(async () => {
+        setLoading(true);
         // create array to store data from each call
         let cityData = [];
         // loop through all the cities in the list
@@ -38,6 +54,7 @@ const WeatherDataGrid = ({ lightTheme }) => {
         }
         // set our weather data state
         setWeatherData(cityData);
+        setLoading(false);
     }, []);
 
     useEffect(() => {
@@ -121,15 +138,26 @@ const WeatherDataGrid = ({ lightTheme }) => {
 
     return (
         <GridContainer>
-            <DataGrid
-                rows={determineRows(weatherData)}
-                columns={columns}
-                pageSize={5}
-                rowsPerPageOptions={[5]}
-                sx={determineStyles(lightTheme)}
-                disableSelectionOnClick
-                disableColumnMenu
-            />
+            {loading ? (
+                <LoadingContainer>
+                    <CircularProgress
+                        sx={{
+                            color: lightTheme ? "#f56038" : "#12492f"
+                        }}
+                        size={64}
+                    />
+                </LoadingContainer>
+            ) : (
+                <DataGrid
+                    rows={determineRows(weatherData)}
+                    columns={columns}
+                    pageSize={5}
+                    rowsPerPageOptions={[5]}
+                    sx={determineStyles(lightTheme)}
+                    disableSelectionOnClick
+                    disableColumnMenu
+                />
+            )}
         </GridContainer>
     )
 }

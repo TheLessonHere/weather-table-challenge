@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Set Up
+
+In order to set up the application locally, clone the project and use the npm install command. The application also relies
+on a single API key to access the OpenWeather API. I've provided my own personal key for this project, however if you were
+to edit this project in the future to add more functionality, you could replace the key in the .env file for your own local
+use.
+
+Alternatively, this project is deployed with GitHub pages and can be viewed at bigcityweather.io without the need to set it up
+locally.
+
 ## Available Scripts
 
 In the project directory, you can run:
