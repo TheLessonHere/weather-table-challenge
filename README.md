@@ -9,8 +9,8 @@ on a single API key to access the OpenWeather API. I've provided my own personal
 to edit this project in the future to add more functionality, you could replace the key in the .env file for your own local
 use.
 
-Alternatively, this project is deployed with GitHub pages and can be viewed at bigcityweather.io without the need to set it up
-locally.
+Alternatively, this project is deployed with GitHub pages and can be viewed at https://thelessonhere.github.io/weather-table-challenge/
+without the need to set it up locally.
 
 ## Available Scripts
 
